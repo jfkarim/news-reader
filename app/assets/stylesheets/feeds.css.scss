@@ -7,7 +7,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body, html {
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Lato", sans-serif;
 	min-width: 700px;
 }
 #content {
@@ -29,19 +29,18 @@ a {
 	left: 0;
 	width: 100%;
 	border-bottom: 1px solid #aaa;
-	background: #fff;
+	background: #333;
 }
 
 .top-bar a {
 	display: block;
 	padding: 15px;
-	color: #d35400;
+	color: #850000;
 }
 
 .top-bar a:hover {
-	color: #e74c3c;
 	text-decoration: none;
-	opacity: 0.9;
+	opacity: 0.5;
 }
 
 .top-bar-left {
@@ -57,23 +56,28 @@ a {
 
 .feeds {
 	position: fixed;
-	background: #eee;
+	background: #555;
 	width: 250px;
-	top: 51;
+	top: 64px;
 	left: 0;
 	border-right: 1px solid #aaa;
 	height: 100%;
 }
 
+
+
 .nav-list > li > a {
 	display: block;
 	padding: 10px;
+	color: #850000;
+	font-size: 14px
 }
 
 .posts {
 	position: absolute;
-	top: 52px;
+	top: 66px;
 	left: 251px;
+	background: #aaa;
 }
 
 .entry-view {
@@ -91,11 +95,13 @@ a {
 }
 
 .feeds li a:hover {
-	background: #ccc;
+	background: #850000;
+	color: #111;
 }
 
 .posts li a:hover {
-	background: #eee;
+	background: #850000;
+	color: #111;
 }
 
 .feeds li .highlighted {
@@ -104,4 +110,20 @@ a {
 
 .posts li .highlighted {
 	background: #eee;
+	color: #850000;
+}
+
+.nav-justified > li {
+  width: 100%;
+}
+
+.btn-primary {
+  background: #850000;
+	padding: 4px;
+	border: none;
+	border-radius: 0;
+}
+
+.btn-primary:hover {
+	background: #888;
 }

@@ -3590,7 +3590,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-justified > li > a {
   margin-bottom: 5px;
-  text-align: center;
 }
 .nav-justified > .dropdown .dropdown-menu {
   top: auto;
@@ -3598,7 +3597,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .nav-justified > li {
-    display: table-cell;
     width: 1%;
   }
   .nav-justified > li > a {
