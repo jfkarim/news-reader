@@ -7,6 +7,8 @@ NewsReader.Routers.Feeds = Backbone.Router.extend({
 	
 	routes: {
 		"": "index"
+    "feeds/:feed_id/entries": "show",
+    "feeds/:feed_id/entries/:id": "showEntry"
 	}
 
 	index: function() {
@@ -20,4 +22,54 @@ NewsReader.Routers.Feeds = Backbone.Router.extend({
 		
 		this.feedsRendered = true
 	}
+	
+	show: function(id) {
+		var that = this;
+		
+		if (!this.feedsRendered) {
+			this.index();
+		}
+		
+		$(".feeds li a").removeClass("highlighted");
+		$("#" + id).addClass("highlighted");
+		
+		var feed = NewsReader.feeds.get(id);
+		var entries = feed.get('entries');
+		
+		var feedView = new NewsReader.Views.FeedView({
+			collection: entries
+		});
+		
+		$(".posts").html(feedView.render().el);
+	},
+	
+	showEntry: function(feedId, id) {
+		var that = this;
+		
+		if (!this.postsRendered) {
+			this.show(feedId);
+		}
+		if (this.$currentEntryElement) {
+			this.$currentEntryElement.removeClass("highlighted").siblings().remove();
+		}
+		
+		this.$currentEntryElement = $("#" + feedId + "-" + id).addClass("highlighted");
+
+    var entries = NewsReader.feeds.get(feedId).get('entries')
+    var entry = entries.get(id)
+
+    var entryView = new NewsReader.Views.EntryView({
+      model: entry
+    });
+
+    $("#" + feedId + "-" + id).after(entryView.render().el);
+
+		this.postsRendered = true;
+	},
+	
+  _swapView: function (view) {
+    this._currentView && this._currentView.remove();
+    this._currenView = view;
+    this.$rootEl.html(view.render().$el);
+  }
 });
