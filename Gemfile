@@ -5,8 +5,6 @@ gem 'rails', '3.2.15'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 
 gem 'simple-rss'
 require 'open-uri'
@@ -29,7 +27,12 @@ gem 'jquery-rails'
 
 group :development do
   gem 'binding_of_caller'
+  gem 'sqlite3'
   gem 'better_errors'
+end
+
+group :production do
+  gem 'pg'
 end
 
 # To use ActiveModel has_secure_password
