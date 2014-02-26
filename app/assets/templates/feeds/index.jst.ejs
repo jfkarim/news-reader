@@ -1,0 +1,9 @@
+<ul class="nav nav-list nav-justified">
+  <% feeds.each(function(feed) { %>
+    <li>
+		<% console.log(feed) %>
+      <a href="#feeds/<%= feed.id %>/entries" id="<%= feed.get('id') %>"><%= feed.get("title")%></a>
+    </li>
+  <% }); %>
+</ul>
+

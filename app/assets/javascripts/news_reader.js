@@ -4,7 +4,14 @@ window.NewsReader = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+		
+		var bootstrappedFeeds = JSON.parse($("#bootstrapped_feeds").htm());
+		NewsReader.feeds = new NewsReader.Collections.Feeds(bootstrappedFeeds, {parse: true});
+		
+		new NewsReader.Routers.FeedsRouter({
+			"$rootEl": $("#content")
+		});
+		Backbone.history.start();
   }
 };
 

@@ -1,0 +1,26 @@
+<nav class="top-bar">
+		<li class="top-bar-left">
+			<a href="#" class="text-center">
+				News Reader
+			</a>
+		</li>
+		<li class="top-bar-right">
+			<div class="input-append control-group add-url">
+			  <input type="text" class="span3" placeholder="URL">
+			  <button type="submit" class="btn btn-primary">Add Feed</button>
+			</div>
+		</li>
+</nav>
+
+<div id='content'>
+	<div class="feeds">
+
+	</div>
+	<div class="posts">
+
+	</div>
+</div>
+
+<script type="application/json" id="bootstrapped_feeds">
+  <%= @feeds %>
+</script>

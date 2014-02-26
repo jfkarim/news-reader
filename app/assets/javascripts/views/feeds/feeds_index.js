@@ -1,5 +1,38 @@
 NewsReader.Views.FeedsIndex = Backbone.View.extend({
-
-  template: JST['feeds/index']
-
+	initialize: function() {
+		var that = this;
+		this.collection.on('change', this.render.bind(this));
+		$(".add-url").on('click', 'button', function(event) {
+			that.submit(event);
+		})
+	},
+	
+	render: function() {
+		var that = this;
+		this.$el.html(JST['feeds/index']({
+			feeds: that.collection
+		}));
+		return this;
+	},
+	
+	events: {
+		"click button": "submit"
+	},
+	
+	submit: function(event) {
+		var url = $(event.target).siblings();
+		$(event.target).addClass("disabled");
+		url.parent().removeClass("error");
+		newFeed = NewsReader.feeds.create({ url: url.val() }, {
+			success: function(resp) {
+				console.log(resp);
+				url.val("");
+				$(event.target).removeClass("disabled");
+			},
+			error: function(resp) {
+				url.parent().addClass("error")
+				$(event.target).removeClass("disabled");
+			}
+		});
+	}
 });
