@@ -21,12 +21,12 @@ NewsReader.Views.FeedsIndexView = Backbone.View.extend({
 	
 	submit: function(event) {
 		var url = $(event.target).siblings();
+		console.log("this is url: " + url);
 		$(event.target).addClass("disabled");
 		url.parent().removeClass("error");
-		console.log("HERE")
 		newFeed = NewsReader.feeds.create({ url: url.val() }, {
+			console.log("this is resp: " + resp);
 			success: function(resp) {
-				console.log(resp);
 				url.val("");
 				$(event.target).removeClass("disabled");
 			},
@@ -36,4 +36,4 @@ NewsReader.Views.FeedsIndexView = Backbone.View.extend({
 			}
 		});
 	}
-});
+})

@@ -6,7 +6,7 @@ class FeedsController < ApplicationController
     
     respond_to do |format|
       format.html { render :index }
-      format.json { render json: @feeds }
+      format.json { render :json => @feeds }
     end
   end
   
@@ -17,7 +17,7 @@ class FeedsController < ApplicationController
     if feed
       render json: feed_json
     else
-      render json: { error: "invalid url" }, status: :unprocessable_entity
+      render :json => { error: "invalid url" }, status: :unprocessable_entity
     end
   end
 end
