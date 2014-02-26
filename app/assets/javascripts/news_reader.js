@@ -5,7 +5,7 @@ window.NewsReader = {
   Routers: {},
   initialize: function() {
 		
-		var bootstrappedFeeds = JSON.parse($("#bootstrapped_feeds").htm());
+		var bootstrappedFeeds = JSON.parse($("#bootstrapped_feeds").html());
 		NewsReader.feeds = new NewsReader.Collections.Feeds(bootstrappedFeeds, {parse: true});
 		
 		new NewsReader.Routers.FeedsRouter({

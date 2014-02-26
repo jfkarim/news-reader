@@ -1,4 +1,4 @@
-NewsReader.Views.FeedsIndex = Backbone.View.extend({
+NewsReader.Views.FeedsIndexView = Backbone.View.extend({
 	initialize: function() {
 		var that = this;
 		this.collection.on('change', this.render.bind(this));

@@ -1,4 +1,4 @@
-NewsReader.Routers.Feeds = Backbone.Router.extend({
+NewsReader.Routers.FeedsRouter = Backbone.Router.extend({
 	initialize: function(options) {
 		this.$rootEl = options.$rootEl;
 		this.feedsRendered = false;
@@ -6,10 +6,10 @@ NewsReader.Routers.Feeds = Backbone.Router.extend({
 	},
 	
 	routes: {
-		"": "index"
+		"": "index",
     "feeds/:feed_id/entries": "show",
     "feeds/:feed_id/entries/:id": "showEntry"
-	}
+	},
 
 	index: function() {
 		var that = this;
@@ -21,7 +21,7 @@ NewsReader.Routers.Feeds = Backbone.Router.extend({
 		$(".feeds").html(indexView.render().el);
 		
 		this.feedsRendered = true
-	}
+	},
 	
 	show: function(id) {
 		var that = this;

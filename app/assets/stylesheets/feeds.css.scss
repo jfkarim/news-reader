@@ -1,3 +1,107 @@
 // Place all the styles related to the Feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the feeds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body, html {
+	font-family: "Open Sans", Arial, sans-serif;
+	min-width: 700px;
+}
+#content {
+	margin-top: 51px;
+}
+
+a {
+	color: #666;
+}
+
+.nav-pills.nav-justified {
+	clear: both;
+}
+
+.top-bar {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 1px solid #aaa;
+	background: #fff;
+}
+
+.top-bar a {
+	display: block;
+	padding: 15px;
+	color: #d35400;
+}
+
+.top-bar a:hover {
+	color: #e74c3c;
+	text-decoration: none;
+	opacity: 0.9;
+}
+
+.top-bar-left {
+	float: left;
+	font-size: 18pt;
+}
+
+.top-bar-right {
+	float: right;
+	padding: 10px 15px 0px 15px;
+//	border-left: 1px solid #aaa;
+}
+
+.feeds {
+	position: fixed;
+	background: #eee;
+	width: 250px;
+	top: 51;
+	left: 0;
+	border-right: 1px solid #aaa;
+	height: 100%;
+}
+
+.nav-list > li > a {
+	display: block;
+	padding: 10px;
+}
+
+.posts {
+	position: absolute;
+	top: 52px;
+	left: 251px;
+}
+
+.entry-view {
+	position: relative;
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 0 0 15px 0;
+}
+
+.visit {
+	position: absolute;
+	right: -15px;
+	top: -35px;
+
+}
+
+.feeds li a:hover {
+	background: #ccc;
+}
+
+.posts li a:hover {
+	background: #eee;
+}
+
+.feeds li .highlighted {
+	background: #ccc;
+}
+
+.posts li .highlighted {
+	background: #eee;
+}
