@@ -20,7 +20,7 @@ NewsReader.Routers.FeedsRouter = Backbone.Router.extend({
 		
 		$(".feeds").html(indexView.render().el);
 		
-		this.feedsRendered = true
+		this.feedsRendered = true;
 	},
 	
 	show: function(id) {

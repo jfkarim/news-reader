@@ -22,8 +22,7 @@ ActiveRecord::Schema.define(:version => 20140226044707) do
     t.text     "json",                                                                  :null => false
     t.datetime "created_at",                                                            :null => false
     t.datetime "updated_at",                                                            :null => false
-    t.text     "description"
-    t.text     "#<ActiveRecord::ConnectionAdapters::TableDefinition:0x007fcf7adb4bc8>"
+    t.text     "description", :limit => 255
   end
 
   add_index "entries", ["feed_id"], :name => "index_entries_on_feed_id"

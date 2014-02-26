@@ -7,7 +7,7 @@ class CreateEntries < ActiveRecord::Migration
       t.datetime :published_at, null: false
       t.integer :feed_id,       null: false
       t.text :json,             null: false
-      t.text :description,
+      t.text :description
 
       t.timestamps
     end
