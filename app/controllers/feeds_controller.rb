@@ -1,6 +1,6 @@
 class FeedsController < ApplicationController
   def index
-    @feedds = Feed.includes(:entries)
+    @feeds = Feed.includes(:entries)
     
     @feeds = @feeds.to_json(include: :entries).html_safe
     
