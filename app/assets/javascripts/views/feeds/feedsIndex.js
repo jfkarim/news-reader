@@ -26,6 +26,7 @@ NewsReader.Views.FeedsIndexView = Backbone.View.extend({
 		newFeed = NewsReader.feeds.create({ url: url.val() }, {
 			success: function(resp) {
 				console.log(resp);
+				console.log("SUCCESS");
 				url.val("");
 				$(event.target).removeClass("disabled");
 			},
